@@ -1,3 +1,4 @@
+[![](https://jitpack.io/v/Mopinion-com/native-android-sdk.svg)](https://jitpack.io/#Mopinion-com/native-android-sdk)
 # Mopinion Native Android SDK
 
 The Mopinion Native Android SDK has been developed 100% in native Kotlin, powerful tool to collect users
@@ -12,9 +13,9 @@ feedback from an Android App based on events.
 - [Clear Extra Data](#clear_extra_data)
 - [Implementing FormState Callbacks](#implementing_callbacks)
 
-## <a name="release_notes">Release notes for version 0.0.5-alpha</a>
+## <a name="release_notes">Release notes for version 1.0.3</a>
 
-- First Alpha version.
+- First stable version.
 
 ## <a name="install">Installation</a>
 
@@ -59,7 +60,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.github.mopinion:MopinionSDKAndroid:1.0.17-alpha'
+implementation 'com.github.Mopinion-com:native-android-sdk:1.0.3'
 }
 ```
 
