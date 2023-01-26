@@ -20,7 +20,7 @@ feedback from an Android App based on events.
 ## <a name="install">Installation</a>
 
 - Install the Mopinion Native Android SDK Library by following the next steps.
-- Download our [Mopinion Forms](https://play.google.com/store/apps/details?id=com.mopinion.news) app
+- Download our [Mopinion Forms](https://play.google.com/store/apps/details?id=com.mopinion.mopinion) app
   from the Google Play Store to preview what your mobile forms will look like in your app.
 
 ### Step 1:
