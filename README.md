@@ -1,4 +1,5 @@
-[![](https://jitpack.io/v/Mopinion-com/native-android-sdk.svg)](https://jitpack.io/#Mopinion-com/native-android-sdk)
+[![](https://jitpack.io/v/mopinion-com/native-android-sdk.svg)](https://jitpack.io/#mopinion-com/native-android-sdk)
+
 # Mopinion Native Android SDK
 
 The Mopinion Native Android SDK has been developed 100% in native Kotlin, powerful tool to collect users
@@ -6,12 +7,25 @@ feedback from an Android App based on events.
 
 ### Contents
 
-- [Release notes](#release_notes)
-- [Install](#install)
-- [Implementation](#implement)
-- [Extra Data](#extra_data)
-- [Clear Extra Data](#clear_extra_data)
-- [Implementing FormState Callbacks](#implementing_callbacks)
+- [Mopinion Native Android SDK](#mopinion-native-android-sdk)
+    - [Contents](#contents)
+  - [Release notes for version 1.0.3](#release-notes-for-version-103)
+  - [Installation](#installation)
+    - [Step 1:](#step-1)
+    - [Step 2:](#step-2)
+    - [Step 3:](#step-3)
+    - [Step 4:](#step-4)
+    - [On API versions \< 26 O (Oreo)](#on-api-versions--26-o-oreo)
+  - [Implementing the SDK](#implementing-the-sdk)
+  - [Kotlin](#kotlin)
+  - [Java:](#java)
+  - [Extra data](#extra-data)
+  - [Clear Extra Data](#clear-extra-data)
+    - [Example:](#example)
+  - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
+    - [Kotlin Example:](#kotlin-example)
+    - [Java Example:](#java-example)
+  - [Flutter Integration](#flutter-integration)
 
 ## <a name="release_notes">Release notes for version 1.0.3</a>
 
@@ -396,3 +410,6 @@ class SomeClass extends AppCompatActivity {
 }
 ```
 If some of the States will not be used, just do not implement the if sentence. Always keep the return Unit.INSTANCE in Java.
+
+## <a name="flutter">Flutter Integration</a>
+To be able to use our Native SDK in a Flutter project, please go to the [Flutter Integration SDK repository](https://github.com/Mopinion-com/flutter-integration-sdk) and follow the instructions.
