@@ -74,7 +74,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.github.mopinion-com:native-android-sdk:1.0.6'
+    implementation 'com.mopinion:native-android-sdk:1.0.6'
 }
 ```
 
