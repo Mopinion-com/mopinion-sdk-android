@@ -1,4 +1,4 @@
-[![](https://jitpack.io/v/mopinion-com/native-android-sdk.svg)](https://jitpack.io/#mopinion-com/native-android-sdk)
+[![](https://jitpack.io/v/Mopinion-com/native-android-sdk.svg)](https://jitpack.io/#Mopinion-com/native-android-sdk)
 
 # Mopinion Native Android SDK
 
@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.3](#release-notes-for-version-103)
+  - [Release notes for version 1.0.6](#release-notes-for-version-106)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -27,9 +27,12 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.3</a>
+## <a name="release_notes">Release notes for version 1.0.6</a>
 
-- First stable version.
+- Language translations has been implemented in the SDK.
+- Improved stability.
+- Improved efficiency.
+- Fixed known bugs.
 
 ## <a name="install">Installation</a>
 
@@ -74,7 +77,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.6'
+    implementation 'com.mopinion:native-android-sdk:1.0.7'
 }
 ```
 
