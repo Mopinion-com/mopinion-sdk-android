@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.6](#release-notes-for-version-106)
+  - [Release notes for version 1.0.7](#release-notes-for-version-107)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -27,7 +27,7 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.6</a>
+## <a name="release_notes">Release notes for version 1.0.7</a>
 
 - Language translations has been implemented in the SDK.
 - Improved stability.
