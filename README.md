@@ -32,7 +32,9 @@ feedback from an Android App based on events.
 - Language translations has been implemented in the SDK.
 - Improved stability.
 - Improved efficiency.
-- Fixed known bugs.
+- Fixed known bugs as:
+  MOP-4001 showeventlogic where form rules are refreshed
+  MOP-3993 Issues with screenshot (accelerated hardware bitmaps)
 
 ## <a name="install">Installation</a>
 
