@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.8-patch1](#release-notes-for-version-108-patch1)
+  - [Release notes for version 1.0.10](#release-notes-for-version-1010)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -27,11 +27,12 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.8-patch1</a>
+## <a name="release_notes">Release notes for version 1.0.10</a>
 
-- Fixed known bugs:
-    - MOP-4019, MOP-3728
-    - Stability issues have been fixed
+Fixed known bugs:
+- MOP-4070, MOP-4077, MOP-4076, MOP-4075
+- Improved stability.
+
 
 ## <a name="install">Installation</a>
 
@@ -76,7 +77,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.8-patch1'
+    implementation 'com.mopinion:native-android-sdk:1.0.10'
 }
 ```
 
