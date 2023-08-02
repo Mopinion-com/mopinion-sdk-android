@@ -31,8 +31,8 @@ feedback from an Android App based on events.
 
 The following reported issues have been solved:
 - MOP-4114
-- MOP-077
-- MOP-085
+- MOP-4077
+- MOP-4085
 
 
 ## <a name="install">Installation</a>
