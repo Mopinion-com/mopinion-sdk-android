@@ -10,6 +10,9 @@ feedback from an Android App based on events.
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
   - [Release notes for version 1.0.14](#release-notes-for-version-1014)
+    - [What's Changed](#whats-changed)
+      - [UX](#ux)
+      - [Fixes](#fixes)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -29,10 +32,15 @@ feedback from an Android App based on events.
 
 ## <a name="release_notes">Release notes for version 1.0.14</a>
 
-The following reported issues have been solved:
-- MOP-4114
-- MOP-4077
-- MOP-4085
+### What's Changed
+
+#### UX
+* Now the form can be dragged down and closed from the Form Top Bar instead that from the Form Body, which could lead to an accidental close.
+
+#### Fixes
+* UI bug where in a WebView Form wasn't possible to scroll and when there was textarea focus at the end of the form wasn't possible to reach it.
+* Post Flow 2.0: feedback posting has been improved and a new caching system which implements a retry interval logic to post the feedback in case of an error. 
+* Crash-Proof: we decided to wrap root functions into a try catch logic.
 
 
 ## <a name="install">Installation</a>
