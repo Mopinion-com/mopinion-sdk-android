@@ -9,9 +9,8 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.14](#release-notes-for-version-1014)
+  - [Release notes for version 1.0.15](#release-notes-for-version-1015)
     - [What's Changed](#whats-changed)
-      - [UX](#ux)
       - [Fixes](#fixes)
   - [Installation](#installation)
     - [Step 1:](#step-1)
@@ -30,17 +29,12 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.14</a>
+## <a name="release_notes">Release notes for version 1.0.15</a>
 
 ### What's Changed
 
-#### UX
-* Now the form can be dragged down and closed from the Form Top Bar instead that from the Form Body, which could lead to an accidental close.
-
 #### Fixes
-* UI bug where in a WebView Form wasn't possible to scroll and when there was textarea focus at the end of the form wasn't possible to reach it.
-* Post Flow 2.0: feedback posting has been improved and a new caching system which implements a retry interval logic to post the feedback in case of an error. 
-* Crash-Proof: we decided to wrap root functions into a try catch logic.
+* Unintentional behaviour where the WebView Forms were reloaded on rotation. Now the url is not reloaded on rotation but the view state is still recreated.
 
 
 ## <a name="install">Installation</a>
@@ -86,7 +80,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.14'
+    implementation 'com.mopinion:native-android-sdk:1.0.15'
 }
 ```
 
