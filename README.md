@@ -9,9 +9,9 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.17](#release-notes-for-version-1017)
+  - [Release notes for version 1.0.18](#release-notes-for-version-1018)
     - [What's Changed](#whats-changed)
-      - [Fixes](#fixes)
+      - [Features](#features)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -21,6 +21,7 @@ feedback from an Android App based on events.
   - [Implementing the SDK](#implementing-the-sdk)
   - [Kotlin](#kotlin)
   - [Java:](#java)
+  - [Ignore form rules](#ignore-form-rules)
   - [Extra data](#extra-data)
   - [Clear Extra Data](#clear-extra-data)
     - [Example:](#example)
@@ -29,12 +30,12 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.17</a>
+## <a name="release_notes">Release notes for version 1.0.18</a>
 
 ### What's Changed
 
-#### Fixes
-* Unintentional behaviour where the WebView Forms were reloaded on rotation. Now the url is not reloaded on rotation but the view state is still recreated.
+#### Features
+- Option to ignore all Form rules when triggering event. Event function now accepts a Boolean parameter named `ignoreProactiveRules` to achieve this feature.
 
 
 ## <a name="install">Installation</a>
@@ -80,7 +81,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.17'
+    implementation 'com.mopinion:native-android-sdk:1.0.18'
 }
 ```
 
@@ -248,6 +249,18 @@ public class SomeFragment extends Fragment {
   FormStates, it also contains within its data classes:
     - FormSent contains `FeedbackPostModel` object with the data that has been sent.
     - FormError contains `hasErrors: Boolean` and the `errorMessage: String`.
+
+## <a name="ignoring_proactive_rules">Ignore form rules</a>
+The function `event`, receives a mandatory `String` parameter named `eventName`. Also, receives an optional parameter named `ignoreProactiveRules` which by default is set to `false`.
+You can set `ignoreProactiveRules` to `true` to ignore all form rules and show the form.
+
+```kotlin
+  ///example:
+  mopinion.event(eventName = "myEvent", ignoreProactiveRules = true) { formState ->
+
+  }
+```
+
 
 ## <a name="extra_data">Extra data</a>
 
