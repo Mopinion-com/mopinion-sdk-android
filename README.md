@@ -9,9 +9,9 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.18](#release-notes-for-version-1018)
+  - [Release notes for version 1.0.19](#release-notes-for-version-1019)
     - [What's Changed](#whats-changed)
-      - [Features](#features)
+      - [Fixes](#fixes)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -30,13 +30,12 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.18</a>
+## <a name="release_notes">Release notes for version 1.0.19</a>
 
 ### What's Changed
 
-#### Features
-- Option to ignore all Form rules when triggering event. Event function now accepts a Boolean parameter named `ignoreProactiveRules` to achieve this feature.
-
+#### Fixes
+- Bug where after updating the form in the Mopinion Web Interface, the form wasn't being updated in the SDK.
 
 ## <a name="install">Installation</a>
 
@@ -81,7 +80,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.18'
+    implementation 'com.mopinion:native-android-sdk:1.0.19'
 }
 ```
 
