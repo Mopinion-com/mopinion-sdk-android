@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.19](#release-notes-for-version-1019)
+  - [Release notes for version 1.0.20](#release-notes-for-version-1020)
     - [What's Changed](#whats-changed)
       - [Fixes](#fixes)
   - [Installation](#installation)
@@ -30,12 +30,13 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.19</a>
+## <a name="release_notes">Release notes for version 1.0.20</a>
 
 ### What's Changed
 
 #### Fixes
-- Bug where after updating the form in the Mopinion Web Interface, the form wasn't being updated in the SDK.
+- Fixed a bug related to the View Component Logic where the Checkbox component view logic wasn't working as expected.
+- Fixed bug where in some autopost configurations, the last page couldn't be posted due to the submit button or navigation buttons were hidden.
 
 ## <a name="install">Installation</a>
 
@@ -80,7 +81,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.19'
+    implementation 'com.mopinion:native-android-sdk:1.0.20'
 }
 ```
 
