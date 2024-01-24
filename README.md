@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.21](#release-notes-for-version-1021)
+  - [Release notes for version 1.0.22](#release-notes-for-version-1022)
     - [What's changed](#whats-changed)
   - [Installation](#installation)
     - [Step 1:](#step-1)
@@ -29,12 +29,13 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.21</a>
+## <a name="release_notes">Release notes for version 1.0.22</a>
 
 ### What's changed
 
-- Submit view components logic has been implemented, allowing to submit the form upon certain selection or logic in a View Component.
-- Exceptions are now also handled when the Mopinion.kt object is created, avoiding the client's app to suffer a fatal crash due to an odd exception.
+- Fixed issues related to the Contact Details Component where view logics were not applied and some text fields were shown when not supposed to be shown.
+- Fixed issues related to Metadata injection into Web View Forms was not working.
+- Improved caching dynamics.
 
 ## <a name="install">Installation</a>
 
@@ -79,7 +80,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.21'
+    implementation 'com.mopinion:native-android-sdk:1.0.22'
 }
 ```
 
