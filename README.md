@@ -34,7 +34,7 @@ feedback from an Android App based on events.
 ### What's changed
 
 - Fixed issues related to the Contact Details Component where view logics were not applied and some text fields were shown when not supposed to be shown.
-- Fixed issues related to Metadata injection into Web View Forms was not working.
+- Fixed issues where Medadata injection into Webview Forms was not working.
 - Improved caching dynamics.
 
 ## <a name="install">Installation</a>
