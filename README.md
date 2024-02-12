@@ -10,7 +10,9 @@ feedback from an Android App based on events.
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
   - [Release notes for version 1.0.23](#release-notes-for-version-1023)
-    - [What's changed](#whats-changed)
+    - [What's Changed](#whats-changed)
+      - [UI Fixes](#ui-fixes)
+      - [Bugs Fixed](#bugs-fixed)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -31,11 +33,18 @@ feedback from an Android App based on events.
 
 ## <a name="release_notes">Release notes for version 1.0.23</a>
 
-### What's changed
+### What's Changed
 
-- Fixed issues related to the Contact Details Component where view logics were not applied and some text fields were shown when not supposed to be shown.
-- Fixed issues where Medadata injection into Webview Forms was not working.
-- Improved caching dynamics.
+#### UI Fixes
+* Fixed UI inconsistencies on Numeric Rating.
+* Fixed UI inconsistencies on Net Promotor Score (NPS).
+* Fixed UI inconsistencies on the Mopinion logo of the forms.
+
+#### Bugs Fixed
+* Provided a fix for crashes when the SDK was released to a Third Party Store (e.g. Amazon, Huawei...).
+* Fixed issue of "empty form page" when View Logic hided all elements on next page.
+* Fixed Issue related to PixelCopy for accelerated hardware devices.
+* Java IDE issues fixed.
 
 ## <a name="install">Installation</a>
 
