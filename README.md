@@ -9,10 +9,8 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.23](#release-notes-for-version-1023)
-    - [What's Changed](#whats-changed)
-      - [UI Fixes](#ui-fixes)
-      - [Bugs Fixed](#bugs-fixed)
+  - [Release notes for version 1.0.24](#release-notes-for-version-1024)
+    - [What's changed:](#whats-changed)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -31,20 +29,13 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.23</a>
+## <a name="release_notes">Release notes for version 1.0.24</a>
 
-### What's Changed
+### What's changed:
 
-#### UI Fixes
-* Fixed UI inconsistencies on Numeric Rating.
-* Fixed UI inconsistencies on Net Promotor Score (NPS).
-* Fixed UI inconsistencies on the Mopinion logo of the forms.
-
-#### Bugs Fixed
-* Provided a fix for crashes when the SDK was released to a Third Party Store (e.g. Amazon, Huawei...).
-* Fixed issue of "empty form page" when View Logic hided all elements on next page.
-* Fixed Issue related to PixelCopy for accelerated hardware devices.
-* Java IDE issues fixed.
+- Fixed bug where "false" word was being shown in the Text Area Component as placeholder.
+- The functionality of providing the SDK version in Webview Forms has been implemented.
+- The SDK has been adapted to receive the Flutter Plugin Version when initialized from a Flutter project.
 
 ## <a name="install">Installation</a>
 
@@ -89,7 +80,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.23'
+    implementation 'com.mopinion:native-android-sdk:1.0.24'
 }
 ```
 
