@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.24](#release-notes-for-version-1024)
+  - [Release notes for version 1.0.25](#release-notes-for-version-1025)
     - [What's changed:](#whats-changed)
   - [Installation](#installation)
     - [Step 1:](#step-1)
@@ -29,13 +29,11 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.24</a>
+## <a name="release_notes">Release notes for version 1.0.25</a>
 
 ### What's changed:
 
-- Fixed bug where "false" word was being shown in the Text Area Component as placeholder.
-- The functionality of providing the SDK version in Webview Forms has been implemented.
-- The SDK has been adapted to receive the Flutter Plugin Version when initialized from a Flutter project.
+- Fixed issue where the Form could not be submitted when having required values using a ContactDetailsComponent.
 
 ## <a name="install">Installation</a>
 
@@ -80,7 +78,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.24'
+    implementation 'com.mopinion:native-android-sdk:1.0.25'
 }
 ```
 
