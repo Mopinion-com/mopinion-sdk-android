@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.25](#release-notes-for-version-1025)
+  - [Release notes for version 1.0.26](#release-notes-for-version-1026)
     - [What's changed:](#whats-changed)
   - [Installation](#installation)
     - [Step 1:](#step-1)
@@ -29,11 +29,16 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.25</a>
+## <a name="release_notes">Release notes for version 1.0.26</a>
 
 ### What's changed:
 
-- Fixed issue where the Form could not be submitted when having required values using a ContactDetailsComponent.
+- The labels UX has been improved in the components that can show labels.
+- Question titles can now be as long as the user wants.
+- StarRatingComponent has been aligned with the Interface Preview.
+- Auto-Post feature has been improved and bugs reported have been fixed.
+- ThumbsComponent has been aligned with the Interface Preview.
+- Bugs fixed on the ScreenshotComponent.
 
 ## <a name="install">Installation</a>
 
@@ -78,7 +83,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.25'
+    implementation 'com.mopinion:native-android-sdk:1.0.26'
 }
 ```
 
