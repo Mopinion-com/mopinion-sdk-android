@@ -14,11 +14,13 @@ feedback from an Android App based on events.
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
+    - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
     - [Step 3:](#step-3)
     - [Step 4:](#step-4)
     - [On API versions \< 26 O (Oreo)](#on-api-versions--26-o-oreo)
   - [Implementing the SDK](#implementing-the-sdk)
   - [Kotlin](#kotlin)
+  - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
   - [Java:](#java)
   - [Ignore form rules](#ignore-form-rules)
   - [Extra data](#extra-data)
@@ -87,6 +89,16 @@ dependencies {
 }
 ```
 
+### Step 2 using Versions Catalog
+```
+[versions]
+mopinion="CURRENT_VERSION"
+...
+
+[libraries]
+mopinion-sdk = { group = "com.mopinion", name = "native-android-sdk", version.ref = "mopinion" }
+```
+
 ### Step 3:
 
 The library needs to communicate with Mopinion Servers, please make sure you have the Internet
@@ -149,7 +161,7 @@ compileOptions {
   AppCompatActivity or Activity and one String with the deployment key, as the following:
 
 ```kotlin
-Mopinion.initialise(this, "$DEPLOYMENT_KEY")
+Mopinion.initialise(this, "DEPLOYMENT_KEY")
 ```
 
 - Once Mopinion is initialised, it is possible to instantiate Mopinion object wherever we need it,
@@ -192,13 +204,61 @@ class SomeFragment : Fragment() {
 }
 ```
 
+## Jetpack Compose implementation 🚀
+
+We do support `FragmentActivity` and `AppCompatActivity` which are completely compatible with Jetpack Compose and are non limiting or causing any deprecation to your project.
+
+In order to use the SDK, your `MainActivity` needs to extend either from `FragmentActivity` or `AppCompatActivity`.
+
+We do suggest the following `init` implementation as example:
+```kotlin
+class MainActivity: FragmentActivity() {
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+       
+        Mopinion.initialise(this, "DEPLOYMENT_KEY")
+
+        setContent {
+            MyApplicationTheme(dynamicColor = false) {
+                Surface(
+                    modifier = Modifier.fillMaxSize(),
+                    color = MaterialTheme.colorScheme.background,
+                ) {
+                    Navigation()
+                }
+            }
+        }
+    }
+}
+```
+
+And in order to construct the `Mopinion` object in your `Composable`, we will need either a `FragmentActivity` or an `AppCompatActivity` too.
+
+We do suggest the following `Mopinion` construction implementation:
+
+```kotlin
+@Composable
+fun MyScreen() {
+  val fragmentActivity = LocalContext.current as? FragmentActivity ?: handleException() //here you can handle the exception if the local context is not a FragmentActivity.
+  val mopinion = remember { Mopinion(fragmentActivity) }
+  Text(
+    text = "Stop guessing, start knowing!",
+    modifier = Modifier
+      .clickable {
+        mopinion.event("YourEventName")
+      }
+  )
+}
+```
+
 ## Java:
 
 - In your MainActivity.java, Mopinion object will be initialised, it will require two values, one
   AppCompatActivity or Activity and one String form key, as the following:
 
 ```
-Mopinion.Companion.initialise(this, "@FORM_KEY");
+Mopinion.Companion.initialise(this, "DEPLOYMENT_KEY");
 ```
 
 - Once Mopinion is initialised, it is possible to instantiate Mopinion object wherever we need it,
