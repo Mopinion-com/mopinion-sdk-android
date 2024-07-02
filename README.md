@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.28](#release-notes-for-version-1028)
+  - [Release notes for version 1.0.27](#release-notes-for-version-1027)
     - [What's changed](#whats-changed)
       - [UX:](#ux)
       - [Issues:](#issues)
@@ -33,7 +33,7 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.28</a>
+## <a name="release_notes">Release notes for version 1.0.27</a>
 
 ### What's changed
 
@@ -93,7 +93,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.28'
+    implementation 'com.mopinion:native-android-sdk:1.0.27'
 }
 ```
 
@@ -387,7 +387,7 @@ FormCanceled|No methods|Is emitted when the form is canceled (tapping outside of
 FormClosed|No methods|Is emitted when the form is submitted and closes automatically, or when the form logic is set to auto-close when the form is submitted. 
 Error|.message/.getMessage: String, .hasErrors/.getHasErrors(): Boolean|Is emitted when an error occurs when the form is being submitted.
 HasNotBeenShown|.reason/getReason(): Reason|Is emitted when due to circumstances that can not be determined as errors occur. This state has as constructor a Reason which gives a clear reason of why the form is not showing up.
-Redirected (Web Forms)|.redirectInfo: RedirectInfo?|Is emitted when a link in the LinkComponent has been clicked and there has been a redirection in the Web Form.
+
 
 As mentioned in the `HasNotBeenShown State`, this state contains a `Reason` explaining why the form did not showed up. The possible reasons by the moment are the following:
 Reason|Methods|Description
@@ -397,18 +397,7 @@ DoesNotMatchProactiveRules|No methods|This reason is provided when the form rule
 EventDoesNotExist|No methods|The event provided does not exist on the deployment.
 FormDoesNotExist|No methods|The form key required does not exist on backend, meaning the form key to which the GET call has been made returns an empty form. This can occur because the form has been deleted and the deployment has not been updated.
 
-As mentioned in the `Redirect State`, the `RedirectInfo` object contains the following properties:
-```kotlin
-data class RedirectInfo(
-    val event: String,
-    val formKey: String,
-    val formName: String,
-    val triggerMethod: String,
-    val url: String,
-    val redirectInfoError: String?
-)
-```
-To detect if there was an error in the redirection, you can check if the `redirectInfoError` is not null.
+
 
 ### Kotlin Example:
 
@@ -442,9 +431,6 @@ mopinion.event(event) { formState ->
           //do something...
           //check why the form did not shown up:
           val reasonOfWhyDidNotShowUp = formState.reason
-        }
-        is FormState.Redirect -> {
-          val redirectInfo = formState.redirectInfo
         }
     }
 }
