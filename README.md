@@ -204,7 +204,7 @@ class SomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         //This can be called from onViewCreated()
-        mopinion = Mopinion(requireActivity(), viewLifecycleOwner)
+        mopinion = Mopinion(requireActivity())
         //Somewhere in the class where needed, .event can be called.
         mopinion.event("action") {
         }
@@ -300,7 +300,7 @@ public class SomeFragment extends Fragment {
     @Override
     protected void onViewCreated(Bundle savedInstanceState) {
 
-        mopinion = new Mopinion(requireActivity(), getViewLifecycleOwner());
+        mopinion = new Mopinion(requireActivity());
         mopinion.event("action", formState -> Unit.INSTANCE);
     }
 }
@@ -308,7 +308,7 @@ public class SomeFragment extends Fragment {
 
 * The Activity will be used to extract the `applicationContext` and launch Kotlin Coroutines with
   the correct lifecycle scope.
-* The `viewLifecycleOwner` will be used to implement the lifecycle safe coroutine launch
+* The `Activity or FragmentActivity` will be used to implement the lifecycle safe coroutine launch
   method `repeatOnLifecycle()`.
 * The key should be replaced with your specific deployment key. This key can be found in your
   Mopinion account at the `Feedback forms` section under `Deployments`.
