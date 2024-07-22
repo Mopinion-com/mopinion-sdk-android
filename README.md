@@ -9,10 +9,8 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.27](#release-notes-for-version-1027)
-    - [What's changed](#whats-changed)
-      - [UX:](#ux)
-      - [Issues:](#issues)
+  - [Release notes for version 1.0.28](#release-notes-for-version-1028)
+    - [What's changed:](#whats-changed)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -33,22 +31,11 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.27</a>
+## <a name="release_notes">Release notes for version 1.0.28</a>
 
-### What's changed
+### What's changed:
 
-#### UX:
-- Header form has been aligned with Preview. End aligning the close icon and setting the respective font type.
-- Progress Bar and Progress Dots and its color now matches with the theme selected.
-- Progress Bar and Progress Dots are not shown if it is a single page form and they are activated.
-- Branding is now present at the Thanks Page.
-- Dark mode issues have been fixed.
-
-#### Issues:
-- Jetpack Compose compatibility improved  and documentation is now included in readme.
-- Versions Catalog is now included in readme.
-- Issue where was not possible to allow Gallery permissions to upload a screenshot using the ScreenshotComponent, presented in >= Tiramisu.
-- Fixed issue where close button in Webforms was not working properly.
+- Tracking redirections on the Link component: users can now obtain feedback about the LinkComponent actions. 
 
 ## <a name="install">Installation</a>
 
@@ -93,7 +80,7 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.27'
+    implementation 'com.mopinion:native-android-sdk:1.0.28'
 }
 ```
 
