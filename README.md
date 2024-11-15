@@ -9,33 +9,36 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 1.0.28](#release-notes-for-version-1028)
-    - [What's changed:](#whats-changed)
-  - [Installation](#installation)
-    - [Step 1:](#step-1)
-    - [Step 2:](#step-2)
-    - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
-    - [Step 3:](#step-3)
-    - [Step 4:](#step-4)
-    - [On API versions \< 26 O (Oreo)](#on-api-versions--26-o-oreo)
-  - [Implementing the SDK](#implementing-the-sdk)
-  - [Kotlin](#kotlin)
-  - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
-  - [Java:](#java)
-  - [Ignore form rules](#ignore-form-rules)
-  - [Extra data](#extra-data)
-  - [Clear Extra Data](#clear-extra-data)
-    - [Example:](#example)
-  - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
-    - [Kotlin Example:](#kotlin-example)
-    - [Java Example:](#java-example)
-  - [Flutter Integration](#flutter-integration)
+    - [Release notes for version 2.0.0 🎉](#release-notes-for-version-200-)
+        - [What's changed:](#whats-changed)
+    - [Installation](#installation)
+        - [Step 1:](#step-1)
+        - [Step 2:](#step-2)
+        - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
+        - [Step 3:](#step-3)
+        - [Step 4:](#step-4)
+        - [On API versions \< 26 O (Oreo)](#on-api-versions--26-o-oreo)
+    - [Implementing the SDK](#implementing-the-sdk)
+    - [Kotlin](#kotlin)
+    - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
+    - [Java:](#java)
+    - [Ignore form rules](#ignore-form-rules)
+    - [Extra data](#extra-data)
+    - [Clear Extra Data](#clear-extra-data)
+        - [Example:](#example)
+    - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
+        - [Kotlin Example:](#kotlin-example)
+        - [Java Example:](#java-example)
+    - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 1.0.28</a>
+## <a name="release_notes">Release notes for version 2.0.0 🎉</a>
 
 ### What's changed:
 
-- Tracking redirections on the Link component: users can now obtain feedback about the LinkComponent actions. 
+- Now there is only one `initialise` method.
+- Now there is only one `event` method with an optional `formStateListener` lambda.
+- Caching concurrency processes have been improved, now they are more efficient.
+- Implemented Modular Clean Architecture 🎉
 
 ## <a name="install">Installation</a>
 
@@ -75,12 +78,12 @@ dependencyResolutionManagement {
 
 ### Step 2:
 
-Install the Mopinion Native Android SDK Library by adding it to the `build.gradle` module level of
+Install the Mopinion Native Android SDK by adding it to the `build.gradle` module level of
 your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
-    implementation 'com.mopinion:native-android-sdk:1.0.28'
+    implementation 'com.mopinion.native-android-sdk:mopinion-sdk:2.0.0'
 }
 ```
 
@@ -91,7 +94,7 @@ mopinion="CURRENT_VERSION"
 ...
 
 [libraries]
-mopinion-sdk = { group = "com.mopinion", name = "native-android-sdk", version.ref = "mopinion" }
+mopinion-sdk = { group = "com.mopinion.native-android-sdk", name = "mopinion-sdk", version.ref = "mopinion" }
 ```
 
 ### Step 3:
@@ -112,8 +115,8 @@ permission in your `AndroidManifest.xml`:
 
 ### Step 4:
 
-This SDK contains view components that extend from MaterialComponents. Your application theme needs to extend from a MaterialComponents theme. 
-In case you can not change the application theme, and you have to use AppCompat themes mandatory, then you can use a MaterialComponent Bridge theme. 
+This SDK contains view components that extend from MaterialComponents. Your application theme needs to extend from a MaterialComponents theme.
+In case you can not change the application theme, and you have to use AppCompat themes mandatory, then you can use a MaterialComponent Bridge theme.
 Both Theme.MaterialComponents and Theme.MaterialComponents.Light have .Bridge themes:
 
 - Theme.MaterialComponents.Bridge
@@ -153,16 +156,17 @@ compileOptions {
 ## Kotlin
 
 - In your MainActivity.kt, Mopinion object will be initialised, it will require two values, one
-  AppCompatActivity or Activity and one String with the deployment key, as the following:
+  `Application` and one `String` with the `deployment key`, as the following:
 
 ```kotlin
-Mopinion.initialise(this, "DEPLOYMENT_KEY")
+Mopinion.initialise(this.application, "DEPLOYMENT_KEY")
 ```
 
 - Once Mopinion is initialised, it is possible to instantiate Mopinion object wherever we need it,
-  keep in mind that it`s processes will be lifecycle aware, to instantiate a Mopinion object it will
-  require two values, an AppCompatActivity or FragmentActivity and a LifecycleOwner:
-- Activity:
+  keep in mind that it's processes will be lifecycle aware, to instantiate a Mopinion object it will
+  require one value, an `AppCompatActivity` or `FragmentActivity`:
+
+  Activity:
 
 ```kotlin
 import com.mopinion.mopinion_android_sdk.*
@@ -212,7 +216,7 @@ class MainActivity: FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
        
-        Mopinion.initialise(this, "DEPLOYMENT_KEY")
+        Mopinion.initialise(this.application, "DEPLOYMENT_KEY")
 
         setContent {
             MyApplicationTheme(dynamicColor = false) {
@@ -250,15 +254,15 @@ fun MyScreen() {
 ## Java:
 
 - In your MainActivity.java, Mopinion object will be initialised, it will require two values, one
-  AppCompatActivity or Activity and one String form key, as the following:
+  `Application` and one `String` deployment key, as the following:
 
-```
-Mopinion.Companion.initialise(this, "DEPLOYMENT_KEY");
+```java
+Mopinion.Companion.initialise(this.application, "DEPLOYMENT_KEY");
 ```
 
 - Once Mopinion is initialised, it is possible to instantiate Mopinion object wherever we need it,
-  keep in mind that it`s processes will be lifecycle aware, to instantiate a Mopinion object it will
-  require two values, an AppCompatActivity or FragmentActivity and a LifecycleOwner:
+  keep in mind that it's processes will be lifecycle aware, to instantiate a Mopinion object it will
+  require one value, an `AppCompatActivity` or `FragmentActivity`:
 - Activity:
 
 ```java
@@ -293,16 +297,14 @@ public class SomeFragment extends Fragment {
 }
 ```
 
-* The Activity will be used to extract the `applicationContext` and launch Kotlin Coroutines with
-  the correct lifecycle scope.
-* The `Activity or FragmentActivity` will be used to implement the lifecycle safe coroutine launch
+* The `Activity` or `FragmentActivity` will be used to implement the lifecycle safe coroutine launch
   method `repeatOnLifecycle()`.
-* The key should be replaced with your specific deployment key. This key can be found in your
+* The `initialise` should contain your deployment key. This key can be found in your
   Mopinion account at the `Feedback forms` section under `Deployments`.
 * The `event` is a specific event that can be connected to a feedback form action in the Mopinion
   system. The default `action` event triggers the form, but an unlimited number of custom events can
   also be added.
-* `event` is a lambda function, which receives a FormState Sealed Class containing the different
+* `event` is an optional lambda function, which receives a FormState Sealed Class containing the different
   FormStates, it also contains within its data classes:
     - FormSent contains `FeedbackPostModel` object with the data that has been sent.
     - FormError contains `hasErrors: Boolean` and the `errorMessage: String`.
@@ -365,24 +367,26 @@ mopinion.removeData()
 The `event()` function is a lambda function which once has been executed, receives a Sealed Class
 FormState. This behaviour is meant to indicate in which state the Form is. This class contains the
 following States:
-State|Methods|Description 
+State|Methods|Description
 ---|---|---
 Loading|No methods|Is emitted when the form is loading.
 FormOpened|No methods|Is emitted once the form is opened.
 FormSent|.feedbackPostModel/.getFeedbackPostModel()|Is emitted once the user submits the form. This Object contains FeedbackPostModel, which is the form with the data the user has submitted.
-FormCanceled|No methods|Is emitted when the form is canceled (tapping outside of the BottomSheetDialogFragment or the back arrow). 
-FormClosed|No methods|Is emitted when the form is submitted and closes automatically, or when the form logic is set to auto-close when the form is submitted. 
+FormCanceled|No methods|Is emitted when the form is canceled (tapping outside of the BottomSheetDialogFragment or the back arrow).
+FormClosed|No methods|Is emitted when the form is submitted and closes automatically, or when the form logic is set to auto-close when the form is submitted.
 Error|.message/.getMessage: String, .hasErrors/.getHasErrors(): Boolean|Is emitted when an error occurs when the form is being submitted.
 HasNotBeenShown|.reason/getReason(): Reason|Is emitted when due to circumstances that can not be determined as errors occur. This state has as constructor a Reason which gives a clear reason of why the form is not showing up.
+Redirected|.redirectInfo: RedirectInfo?|Emitted when a link has been clicked in the SDK, with the `LinkComponent` and the user has been redirected to a URL in the browser. The RedirectInfo contains data of that redirection such as `event: String`, `formKey: String`, `formName: String`, `triggerMethod: String`, `url: String`, `redirectInfoError: String?`
 
 
 As mentioned in the `HasNotBeenShown State`, this state contains a `Reason` explaining why the form did not showed up. The possible reasons by the moment are the following:
 Reason|Methods|Description
 ---|---|---
 ErrorWhileFetchingForm|.exception/.getException(): Exception|This reason is provided when fetching the form an error occurs, it contains an Exception.
-DoesNotMatchProactiveRules|No methods|This reason is provided when the form rules does not match the required criteria to be shown. 
+DoesNotMatchProactiveRules|No methods|This reason is provided when the form rules does not match the required criteria to be shown.
 EventDoesNotExist|No methods|The event provided does not exist on the deployment.
 FormDoesNotExist|No methods|The form key required does not exist on backend, meaning the form key to which the GET call has been made returns an empty form. This can occur because the form has been deleted and the deployment has not been updated.
+
 
 
 
