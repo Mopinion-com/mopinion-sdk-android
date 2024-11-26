@@ -83,7 +83,10 @@ your project. The minimal required Android API is 21.
 
 ```groovy
 dependencies {
+    //For the full version
     implementation 'com.mopinion.native-android-sdk:mopinion-sdk:2.0.0'
+    //For the webview version
+    implementation 'com.mopinion.native-android-sdk:webview-sdk:2.0.0'
 }
 ```
 
