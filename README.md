@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-    - [Release notes for version 2.0.0 🎉](#release-notes-for-version-200-)
+    - [Release notes for version 2.0.1 🎉](#release-notes-for-version-200-)
         - [What's changed:](#whats-changed)
     - [Installation](#installation)
         - [Step 1:](#step-1)
@@ -31,14 +31,15 @@ feedback from an Android App based on events.
         - [Java Example:](#java-example)
     - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 2.0.0 🎉</a>
+## <a name="release_notes">Release notes for version 2.0.1 </a>
 
 ### What's changed:
 
-- Now there is only one `initialise` method.
-- Now there is only one `event` method with an optional `formStateListener` lambda.
-- Caching concurrency processes have been improved, now they are more efficient.
-- Implemented Modular Clean Architecture 🎉
+- Room issues has been fixed -> [GitHub Issue #6](https://github.com/Mopinion-com/mopinion-sdk-android/issues/6).
+- Android Photo Picker is implemented, avoiding the `READ_MEDIA_IMAGES` permission use -> [GitHub Issue #5](https://github.com/Mopinion-com/mopinion-sdk-android/issues/5).
+- Patch for duplicated or ambiguous style naming -> [GitHub Issue #4](https://github.com/Mopinion-com/mopinion-sdk-android/issues/4).
+- Screenshot uploading has been improved.
+- Gets the Android platform version with the ***Android Version*** and not with the ***API level*** anymore.
 
 ## <a name="install">Installation</a>
 
@@ -81,12 +82,12 @@ dependencyResolutionManagement {
 Install the Mopinion Native Android SDK by adding it to the `build.gradle` module level of
 your project. The minimal required Android API is 21.
 
-```groovy
+```kotlin
 dependencies {
     //For the full version
-    implementation 'com.mopinion.native-android-sdk:mopinion-sdk:2.0.0'
+    implementation("com.mopinion.native-android-sdk:mopinion-sdk:2.0.1")
     //For the webview version
-    implementation 'com.mopinion.native-android-sdk:webview-sdk:2.0.0'
+    implementation("com.mopinion.native-android-sdk:webview-sdk:2.0.1")
 }
 ```
 
@@ -137,16 +138,16 @@ For more information, please visit [MaterialComponents implementation steps](htt
 This SDK implements Java LocalDateTime, which is not available on lower versions of Java 8 APIs, to be able to use it, you will have to apply the desugar plugin to your build.gradle (App module) as the following:
 ```groovy
 defaultConfig {
-        // Required when setting minSdkVersion to 20 or lower
-        multiDexEnabled true
-    }
+    // Required when setting minSdkVersion to 20 or lower
+    multiDexEnabled true
+}
 
 compileOptions {
-        coreLibraryDesugaringEnabled true
-        ...
-    }
+    coreLibraryDesugaringEnabled true
+    ...
+}
 
-    dependencies {
+dependencies {
     ...
     coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:1.1.5'
     ...
@@ -218,7 +219,7 @@ class MainActivity: FragmentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       
+
         Mopinion.initialise(this.application, "DEPLOYMENT_KEY")
 
         setContent {
@@ -242,15 +243,15 @@ We do suggest the following `Mopinion` construction implementation:
 ```kotlin
 @Composable
 fun MyScreen() {
-  val fragmentActivity = LocalContext.current as? FragmentActivity ?: handleException() //here you can handle the exception if the local context is not a FragmentActivity.
-  val mopinion = remember { Mopinion(fragmentActivity) }
-  Text(
-    text = "Stop guessing, start knowing!",
-    modifier = Modifier
-      .clickable {
-        mopinion.event("YourEventName")
-      }
-  )
+    val fragmentActivity = LocalContext.current as? FragmentActivity ?: handleException() //here you can handle the exception if the local context is not a FragmentActivity.
+    val mopinion = remember { Mopinion(fragmentActivity) }
+    Text(
+        text = "Stop guessing, start knowing!",
+        modifier = Modifier
+            .clickable {
+                mopinion.event("YourEventName")
+            }
+    )
 }
 ```
 
@@ -318,9 +319,9 @@ You can set `ignoreProactiveRules` to `true` to ignore all form rules and show t
 
 ```kotlin
   ///example:
-  mopinion.event(eventName = "myEvent", ignoreProactiveRules = true) { formState ->
+mopinion.event(eventName = "myEvent", ignoreProactiveRules = true) { formState ->
 
-  }
+}
 ```
 
 
@@ -422,9 +423,9 @@ mopinion.event(event) { formState ->
             //do something...
         }
         is FormState.HasNotBeenShown -> {
-          //do something...
-          //check why the form did not shown up:
-          val reasonOfWhyDidNotShowUp = formState.reason
+            //do something...
+            //check why the form did not show up:
+            val reasonOfWhyDidNotShowUp = formState.reason
         }
     }
 }
@@ -454,45 +455,45 @@ mopinion.event(event) { formState ->
 ### Java Example:
 ```java
 class SomeClass extends AppCompatActivity {
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.some_activity);
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.some_activity);
 
-    mopinion.event("action", formState -> {
-      if (formState instanceof FormState.Loading) {
-            //do something...
-      }
-      if (formState instanceof FormState.FormOpened) {
-        //do something...
-      }
-      if (formState instanceof FormState.FormSent) {
-        //do something...
-        // So we can extract the posted object.
-        FeedbackPostModel postedObject = ((FormState.FormSent) formState).getFeedbackPostModel();
-      }
-      if (formState instanceof FormState.FormCanceled) {
-        //do something...
-      }
-      if (formState instanceof FormState.FormClosed) {
-        //do something...
-      }
-      if (formState instanceof FormState.Error) {
-        //do something...
-        // It is possible to check if it has errors and extract the error message.
-        if (((FormState.Error) formState).getHasErrors()) {
-            String errorMessage = ((FormState.Error) formState).getMessage();
-        }
-      }
-      if (formState instanceof FormState.HasNotBeenShown) {
-        //do something...
-        //check why the form did not show up:
-        Reason reasonOfWhyDidNotShowUp = ((FormState.HasNotBeenShown) formState).getReason();
+        mopinion.event("action", formState -> {
+            if (formState instanceof FormState.Loading) {
+                //do something...
+            }
+            if (formState instanceof FormState.FormOpened) {
+                //do something...
+            }
+            if (formState instanceof FormState.FormSent) {
+                //do something...
+                // So we can extract the posted object.
+                FeedbackPostModel postedObject = ((FormState.FormSent) formState).getFeedbackPostModel();
+            }
+            if (formState instanceof FormState.FormCanceled) {
+                //do something...
+            }
+            if (formState instanceof FormState.FormClosed) {
+                //do something...
+            }
+            if (formState instanceof FormState.Error) {
+                //do something...
+                // It is possible to check if it has errors and extract the error message.
+                if (((FormState.Error) formState).getHasErrors()) {
+                    String errorMessage = ((FormState.Error) formState).getMessage();
+                }
+            }
+            if (formState instanceof FormState.HasNotBeenShown) {
+                //do something...
+                //check why the form did not show up:
+                Reason reasonOfWhyDidNotShowUp = ((FormState.HasNotBeenShown) formState).getReason();
 
-      }
-      return Unit.INSTANCE;
-    });
-  }
+            }
+            return Unit.INSTANCE;
+        });
+    }
 }
 ```
 If some of the States will not be used, just do not implement the if sentence. Always keep the return Unit.INSTANCE in Java.
