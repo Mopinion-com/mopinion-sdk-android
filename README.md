@@ -9,37 +9,35 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 2.0.2 ](#release-notes-for-version-202-)
-    - [What's changed:](#whats-changed)
-  - [Installation](#installation)
-    - [Step 1:](#step-1)
-    - [Step 2:](#step-2)
-    - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
-    - [Step 3:](#step-3)
-    - [Step 4:](#step-4)
-    - [On API versions \< 26 O (Oreo)](#on-api-versions--26-o-oreo)
-  - [Implementing the SDK](#implementing-the-sdk)
-  - [Kotlin](#kotlin)
-  - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
-  - [Java:](#java)
-  - [Ignore form rules](#ignore-form-rules)
-  - [Extra data](#extra-data)
-  - [Clear Extra Data](#clear-extra-data)
-    - [Example:](#example)
-  - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
-    - [Kotlin Example:](#kotlin-example)
-    - [Java Example:](#java-example)
-  - [Flutter Integration](#flutter-integration)
+    - [Release notes for version 2.0.3 🎉](#release-notes-for-version-200-)
+        - [What's changed:](#whats-changed)
+    - [Installation](#installation)
+        - [Step 1:](#step-1)
+        - [Step 2:](#step-2)
+        - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
+        - [Step 3:](#step-3)
+        - [Step 4:](#step-4)
+        - [On API versions \< 26 O (Oreo)](#on-api-versions--26-o-oreo)
+    - [Implementing the SDK](#implementing-the-sdk)
+    - [Kotlin](#kotlin)
+    - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
+    - [Java:](#java)
+    - [Ignore form rules](#ignore-form-rules)
+    - [Extra data](#extra-data)
+    - [Clear Extra Data](#clear-extra-data)
+        - [Example:](#example)
+    - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
+        - [Kotlin Example:](#kotlin-example)
+        - [Java Example:](#java-example)
+    - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 2.0.2 </a>
+## <a name="release_notes">Release notes for version 2.0.3 </a>
 
 ### What's changed:
 
-- Room issues has been fixed -> [GitHub Issue #6](https://github.com/Mopinion-com/mopinion-sdk-android/issues/6).
-- Android Photo Picker is implemented, avoiding the `READ_MEDIA_IMAGES` permission use -> [GitHub Issue #5](https://github.com/Mopinion-com/mopinion-sdk-android/issues/5).
-- Patch for duplicated or ambiguous style naming -> [GitHub Issue #4](https://github.com/Mopinion-com/mopinion-sdk-android/issues/4).
-- Screenshot uploading has been improved.
-- Gets the Android platform version with the ***Android Version*** and not with the ***API level*** anymore.
+- Koin has been removed as our DI framework and we have developed our own DI framework.
+- Fixed theming issues.
+- Improved stability.
 
 ## <a name="install">Installation</a>
 
@@ -85,9 +83,9 @@ your project. The minimal required Android API is 21.
 ```kotlin
 dependencies {
     //For the full version
-    implementation("com.mopinion.native-android-sdk:mopinion-sdk:2.0.2")
+    implementation("com.mopinion.native-android-sdk:mopinion-sdk:2.0.3")
     //For the webview version
-    implementation("com.mopinion.native-android-sdk:webview-sdk:2.0.2")
+    implementation("com.mopinion.native-android-sdk:webview-sdk:2.0.3")
 }
 ```
 
