@@ -9,27 +9,27 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-    - [Release notes for version 2.0.3 🎉](#release-notes-for-version-200-)
-        - [What's changed:](#whats-changed)
-    - [Installation](#installation)
-        - [Step 1:](#step-1)
-        - [Step 2:](#step-2)
-        - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
-        - [Step 3:](#step-3)
-        - [Step 4:](#step-4)
-        - [On API versions \< 26 O (Oreo)](#on-api-versions--26-o-oreo)
-    - [Implementing the SDK](#implementing-the-sdk)
-    - [Kotlin](#kotlin)
-    - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
-    - [Java:](#java)
-    - [Ignore form rules](#ignore-form-rules)
-    - [Extra data](#extra-data)
-    - [Clear Extra Data](#clear-extra-data)
-        - [Example:](#example)
-    - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
-        - [Kotlin Example:](#kotlin-example)
-        - [Java Example:](#java-example)
-    - [Flutter Integration](#flutter-integration)
+  - [Release notes for version 2.0.3 ](#release-notes-for-version-203-)
+    - [What's changed:](#whats-changed)
+  - [Installation](#installation)
+    - [Step 1:](#step-1)
+    - [Step 2:](#step-2)
+    - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
+    - [Step 3:](#step-3)
+    - [Step 4:](#step-4)
+    - [Java Time API Support](#java-time-api-support)
+  - [Implementing the SDK](#implementing-the-sdk)
+  - [Kotlin](#kotlin)
+  - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
+  - [Java:](#java)
+  - [Ignore form rules](#ignore-form-rules)
+  - [Extra data](#extra-data)
+  - [Clear Extra Data](#clear-extra-data)
+    - [Example:](#example)
+  - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
+    - [Kotlin Example:](#kotlin-example)
+    - [Java Example:](#java-example)
+  - [Flutter Integration](#flutter-integration)
 
 ## <a name="release_notes">Release notes for version 2.0.3 </a>
 
@@ -131,9 +131,11 @@ Bridge themes inherit from AppCompat themes, but also define the new Material Co
 
 For more information, please visit [MaterialComponents implementation steps](https://material.io/develop/android/docs/getting-started).
 
-### On API versions < 26 O (Oreo)
+### Java Time API Support
 
-This SDK implements Java LocalDateTime, which is not available on lower versions of Java 8 APIs, to be able to use it, you will have to apply the desugar plugin to your build.gradle (App module) as the following:
+This SDK uses java.time APIs (such as LocalDateTime) for handling date and time logic. While Android added support for java.time starting from API 26 (Oreo), full support without desugaring is only available from API 33 (Android 13) and above.
+If your app supports devices with API < 33 (which most apps do), you need to enable core library desugaring in your build.gradle to ensure compatibility:
+
 ```groovy
 defaultConfig {
     // Required when setting minSdkVersion to 20 or lower
