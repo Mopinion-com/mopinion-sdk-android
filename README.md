@@ -9,35 +9,33 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 2.0.3 ](#release-notes-for-version-203-)
-    - [What's changed:](#whats-changed)
-  - [Installation](#installation)
-    - [Step 1:](#step-1)
-    - [Step 2:](#step-2)
-    - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
-    - [Step 3:](#step-3)
-    - [Step 4:](#step-4)
-    - [Java Time API Support](#java-time-api-support)
-  - [Implementing the SDK](#implementing-the-sdk)
-  - [Kotlin](#kotlin)
-  - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
-  - [Java:](#java)
-  - [Ignore form rules](#ignore-form-rules)
-  - [Extra data](#extra-data)
-  - [Clear Extra Data](#clear-extra-data)
-    - [Example:](#example)
-  - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
-    - [Kotlin Example:](#kotlin-example)
-    - [Java Example:](#java-example)
-  - [Flutter Integration](#flutter-integration)
+    - [Release notes for version 2.0.3 🎉](#release-notes-for-version-200-)
+        - [What's changed:](#whats-changed)
+    - [Installation](#installation)
+        - [Step 1:](#step-1)
+        - [Step 2:](#step-2)
+        - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
+        - [Step 3:](#step-3)
+        - [Step 4:](#step-4)
+        - [On API versions \< 26 O (Oreo)](#on-api-versions--26-o-oreo)
+    - [Implementing the SDK](#implementing-the-sdk)
+    - [Kotlin](#kotlin)
+    - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
+    - [Java:](#java)
+    - [Ignore form rules](#ignore-form-rules)
+    - [Extra data](#extra-data)
+    - [Clear Extra Data](#clear-extra-data)
+        - [Example:](#example)
+    - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
+        - [Kotlin Example:](#kotlin-example)
+        - [Java Example:](#java-example)
+    - [Flutter Integration](#flutter-integration)
 
 ## <a name="release_notes">Release notes for version 2.0.3 </a>
 
 ### What's changed:
 
-- Koin has been removed as our DI framework and we have developed our own DI framework.
-- Fixed theming issues.
-- Improved stability.
+- Fixed UI issue where title was not displayed on Single Line Component.
 
 ## <a name="install">Installation</a>
 
