@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 2.0.4 ](#release-notes-for-version-204-)
+  - [Release notes for version 2.0.5-rc1 ](#release-notes-for-version-205-rc1-)
     - [What's changed:](#whats-changed)
   - [Installation](#installation)
     - [Step 1:](#step-1)
@@ -31,12 +31,11 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 2.0.4 </a>
+## <a name="release_notes">Release notes for version 2.0.5-rc1 </a>
 
 ### What's changed:
 
-- Fixed UI issue where title was not displayed on Single Line Component.
-- Minor issues fixed.
+- Fixed caching issues.
 
 ## <a name="install">Installation</a>
 
@@ -82,9 +81,9 @@ your project. The minimal required Android API is 21.
 ```kotlin
 dependencies {
     //For the full version
-    implementation("com.mopinion.native-android-sdk:mopinion-sdk:2.0.4")
+    implementation("com.mopinion.native-android-sdk:mopinion-sdk:2.0.5-rc1")
     //For the webview version
-    implementation("com.mopinion.native-android-sdk:webview-sdk:2.0.4")
+    implementation("com.mopinion.native-android-sdk:webview-sdk:2.0.5-rc1")
 }
 ```
 
