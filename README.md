@@ -81,9 +81,9 @@ your project. The minimal required Android API is 21.
 ```kotlin
 dependencies {
     //For the full version
-    implementation("com.mopinion.native-android-sdk:mopinion-sdk:2.0.5-rc1")
+    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:2.0.5-rc1")
     //For the webview version
-    implementation("com.mopinion.native-android-sdk:webview-sdk:2.0.5-rc1")
+    implementation("com.github.Mopinion-com..native-android-sdk:webview-sdk:2.0.5-rc1")
 }
 ```
 
