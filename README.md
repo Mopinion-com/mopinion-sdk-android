@@ -83,7 +83,7 @@ dependencies {
     //For the full version
     implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:2.0.5-rc1")
     //For the webview version
-    implementation("com.github.Mopinion-com..native-android-sdk:webview-sdk:2.0.5-rc1")
+    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:2.0.5-rc1")
 }
 ```
 
