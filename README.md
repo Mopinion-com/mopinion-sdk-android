@@ -1,5 +1,3 @@
-[![](https://jitpack.io/v/Mopinion-com/native-android-sdk.svg)](https://jitpack.io/#Mopinion-com/native-android-sdk)
-
 # Mopinion Native Android SDK
 
 The Mopinion Native Android SDK has been developed 100% in native Kotlin, powerful tool to collect users
