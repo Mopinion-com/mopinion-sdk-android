@@ -9,7 +9,7 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 2.0.6 ](#release-notes-for-version-206-)
+  - [Release notes for version 2.0.7 ](#release-notes-for-version-207-)
     - [What's changed:](#whats-changed)
   - [Installation](#installation)
     - [Step 1:](#step-1)
@@ -31,7 +31,7 @@ feedback from an Android App based on events.
     - [Java Example:](#java-example)
   - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 2.0.6 </a>
+## <a name="release_notes">Release notes for version 2.0.7 </a>
 
 ### What's changed:
 
@@ -81,9 +81,9 @@ your project. The minimal required Android API is 21.
 ```kotlin
 dependencies {
     //For the full version
-    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:2.0.6")
+    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:2.0.7")
     //For the webview version
-    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:2.0.6")
+    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:2.0.7")
 }
 ```
 
