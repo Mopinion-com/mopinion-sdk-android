@@ -11,6 +11,7 @@ feedback from an Android App based on events.
     - [Contents](#contents)
   - [Release notes for version 2.0.7 ](#release-notes-for-version-207-)
     - [What's changed:](#whats-changed)
+    - [Latest Release Candidate](#latest-release-candidate)
   - [Installation](#installation)
     - [Step 1:](#step-1)
     - [Step 2:](#step-2)
@@ -36,6 +37,10 @@ feedback from an Android App based on events.
 ### What's changed:
 
 - Fixed caching and synchronization issues.
+
+### Latest Release Candidate
+
+- `2.0.8-rc3` improves Proguard optimization.
 
 ## <a name="install">Installation</a>
 
