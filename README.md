@@ -9,38 +9,34 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-  - [Release notes for version 2.0.7 ](#release-notes-for-version-207-)
-    - [What's changed:](#whats-changed)
-    - [Latest Release Candidate](#latest-release-candidate)
-  - [Installation](#installation)
-    - [Step 1:](#step-1)
-    - [Step 2:](#step-2)
-    - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
-    - [Step 3:](#step-3)
-    - [Step 4:](#step-4)
-    - [Java Time API Support](#java-time-api-support)
-  - [Implementing the SDK](#implementing-the-sdk)
-  - [Kotlin](#kotlin)
-  - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
-  - [Java:](#java)
-  - [Ignore form rules](#ignore-form-rules)
-  - [Extra data](#extra-data)
-  - [Clear Extra Data](#clear-extra-data)
-    - [Example:](#example)
-  - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
-    - [Kotlin Example:](#kotlin-example)
-    - [Java Example:](#java-example)
-  - [Flutter Integration](#flutter-integration)
+    - [Release notes for version 2.0.9 ](#release-notes-for-version-207-)
+        - [What's changed:](#whats-changed)
+        - [Latest Release Candidate](#latest-release-candidate)
+    - [Installation](#installation)
+        - [Step 1:](#step-1)
+        - [Step 2:](#step-2)
+        - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
+        - [Step 3:](#step-3)
+        - [Step 4:](#step-4)
+        - [Java Time API Support](#java-time-api-support)
+    - [Implementing the SDK](#implementing-the-sdk)
+    - [Kotlin](#kotlin)
+    - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
+    - [Java:](#java)
+    - [Ignore form rules](#ignore-form-rules)
+    - [Extra data](#extra-data)
+    - [Clear Extra Data](#clear-extra-data)
+        - [Example:](#example)
+    - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
+        - [Kotlin Example:](#kotlin-example)
+        - [Java Example:](#java-example)
+    - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 2.0.7 </a>
+## <a name="release_notes">Release notes for version 2.0.9 </a>
 
 ### What's changed:
 
-- Fixed caching and synchronization issues.
-
-### Latest Release Candidate
-
-- `2.0.8-rc3` improves Proguard optimization.
+- Fixed conflicting font styles in some components.
 
 ## <a name="install">Installation</a>
 
@@ -86,9 +82,9 @@ your project. The minimal required Android API is 21.
 ```kotlin
 dependencies {
     //For the full version
-    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:2.0.7")
+    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:2.0.9")
     //For the webview version
-    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:2.0.7")
+    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:2.0.9")
 }
 ```
 
