@@ -158,12 +158,20 @@ dependencies {
 
 ## Kotlin
 
-- In your MainActivity.kt, Mopinion object will be initialised, it will require two values, one
-  `Application` and one `String` with the `deployment key`, as the following:
+- In your MainActivity.kt or Application class, Mopinion object will be initialised, it will require 3 values:
+  - `Application`
+  - `String` with the `deployment key`
+  - `themeMode` specifying the theme mode desired for the forms. By default is set to `ThemeMode.Light`.
 
+This is how the signature looks like:
 ```kotlin
-Mopinion.initialise(this.application, "DEPLOYMENT_KEY")
+Mopinion.initialise(
+    application = this,
+    deploymentKey = "$YourKey",
+    themeMode = ThemeMode.System
+)
 ```
+
 
 - Once Mopinion is initialised, it is possible to instantiate Mopinion object wherever we need it,
   keep in mind that it's processes will be lifecycle aware, to instantiate a Mopinion object it will
