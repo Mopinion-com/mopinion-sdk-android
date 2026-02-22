@@ -9,28 +9,29 @@ feedback from an Android App based on events.
 
 - [Mopinion Native Android SDK](#mopinion-native-android-sdk)
     - [Contents](#contents)
-    - [Release notes for version 2.0.10 ](#release-notes-for-version-207-)
-        - [What's changed:](#whats-changed)
-        - [Latest Release Candidate](#latest-release-candidate)
-    - [Installation](#installation)
-        - [Step 1:](#step-1)
-        - [Step 2:](#step-2)
-        - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
-        - [Step 3:](#step-3)
-        - [Step 4:](#step-4)
-        - [Java Time API Support](#java-time-api-support)
-    - [Implementing the SDK](#implementing-the-sdk)
-    - [Kotlin](#kotlin)
-    - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
-    - [Java:](#java)
-    - [Ignore form rules](#ignore-form-rules)
-    - [Extra data](#extra-data)
-    - [Clear Extra Data](#clear-extra-data)
-        - [Example:](#example)
-    - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
-        - [Kotlin Example:](#kotlin-example)
-        - [Java Example:](#java-example)
-    - [Flutter Integration](#flutter-integration)
+  - [Release notes for version 2.0.10 ](#release-notes-for-version-2010-)
+    - [What's changed:](#whats-changed)
+  - [Installation](#installation)
+    - [Step 1:](#step-1)
+    - [Step 2:](#step-2)
+    - [Step 2 using Versions Catalog](#step-2-using-versions-catalog)
+    - [Step 3:](#step-3)
+    - [Step 4:](#step-4)
+    - [Java Time API Support](#java-time-api-support)
+  - [Implementing the SDK](#implementing-the-sdk)
+    - [For version 2.0.10+](#for-version-2010)
+    - [For version \<2.0.10](#for-version-2010-1)
+  - [Kotlin](#kotlin)
+  - [Jetpack Compose implementation 🚀](#jetpack-compose-implementation-)
+  - [Java:](#java)
+  - [Ignore form rules](#ignore-form-rules)
+  - [Extra data](#extra-data)
+  - [Clear Extra Data](#clear-extra-data)
+    - [Example:](#example)
+  - [Implementing FormState Callbacks](#implementing-formstate-callbacks)
+    - [Kotlin Example:](#kotlin-example)
+    - [Java Example:](#java-example)
+  - [Flutter Integration](#flutter-integration)
 
 ## <a name="release_notes">Release notes for version 2.0.10 </a>
 
@@ -157,6 +158,30 @@ dependencies {
 
 
 ## <a name="implement">Implementing the SDK</a>
+
+### For version 2.0.10+
+- In your MainActivity.kt or Application class, Mopinion object will be initialised, it will require 3 values:
+  - `Application`
+  - `String` with the `deployment key`
+  - `themeMode` specifying the theme mode desired for the forms. By default is set to `ThemeMode.Light`.
+
+This is how the signature looks like:
+```kotlin
+Mopinion.initialise(
+    application = this,
+    deploymentKey = "$YourKey",
+    themeMode = ThemeMode.System
+)
+```
+
+### For version <2.0.10
+
+- In your MainActivity.kt, Mopinion object will be initialised, it will require two values, one
+  `Application` and one `String` with the `deployment key`, as the following:
+
+```kotlin
+Mopinion.initialise(this.application, "DEPLOYMENT_KEY")
+```
 
 ## Kotlin
 
