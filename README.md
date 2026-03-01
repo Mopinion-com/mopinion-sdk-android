@@ -32,13 +32,12 @@ feedback from an Android App based on events.
         - [Java Example:](#java-example)
     - [Flutter Integration](#flutter-integration)
 
-## <a name="release_notes">Release notes for version 2.0.10 </a>
+## <a name="release_notes">Release notes for version 3.0.0 </a>
 
 ### What's changed:
 
-- Form rule matching improved, now you can have multiple forms with the same event name and the first to match the rules will be shown.
-- Form theme issues fixed.
-- Form state listener callbacks issues fixed.
+- Bug where the Mopinion logo was not visible in dark mode.
+- Bug where some view components were not visible when switching themes.
 
 ## <a name="install">Installation</a>
 
@@ -84,9 +83,9 @@ your project. The minimal required Android API is 21.
 ```kotlin
 dependencies {
     //For the full version
-    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:2.0.10")
+    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:3.0.0")
     //For the webview version
-    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:2.0.10")
+    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:3.0.0")
 }
 ```
 
