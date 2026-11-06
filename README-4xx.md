@@ -1,5 +1,5 @@
 
-# Mopinion Native Android SDK (Beta)
+# Mopinion Native Android SDK 4.x.x
 
 The Mopinion Native Android SDK is a fully native Kotlin SDK designed to collect user feedback inside Android applications based on custom events and deployment rules.
 
@@ -9,7 +9,7 @@ This beta version introduces a simplified API, Flow-based state handling, improv
 
 # Contents
 
-- [Mopinion Native Android SDK (Beta)](#mopinion-native-android-sdk-beta)
+- [Mopinion Native Android SDK 4.x.x](#mopinion-native-android-sdk-4xx)
 - [Contents](#contents)
 - [Release Notes](#release-notes)
   - [What's new in Beta](#whats-new-in-beta)
