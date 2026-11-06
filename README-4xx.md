@@ -3,7 +3,7 @@
 
 The Mopinion Native Android SDK is a fully native Kotlin SDK designed to collect user feedback inside Android applications based on custom events and deployment rules.
 
-This beta version introduces a simplified API, Flow-based state handling, improved Compose support, metadata APIs, deployment refresh control, and better Flutter interoperability.
+This version introduces a simplified API, Flow-based state handling, improved Compose support, metadata APIs, deployment refresh control, and better Flutter interoperability.
 
 ---
 
@@ -12,7 +12,7 @@ This beta version introduces a simplified API, Flow-based state handling, improv
 - [Mopinion Native Android SDK 4.x.x](#mopinion-native-android-sdk-4xx)
 - [Contents](#contents)
 - [Release Notes](#release-notes)
-  - [What's new in Beta](#whats-new-in-beta)
+  - [What's new in 4.x.x](#whats-new-in-4xx)
 - [Installation](#installation)
   - [Step 1](#step-1)
   - [Step 2](#step-2)
@@ -38,7 +38,7 @@ This beta version introduces a simplified API, Flow-based state handling, improv
 
 # Release Notes
 
-## What's new in Beta
+## What's new in 4.x.x
 
 - Fully redesigned singleton API.
 - Native Kotlin implementation.
@@ -84,13 +84,13 @@ Install the SDK in your module-level build.gradle.
 
 ```kotlin
 dependencies {
-    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:BETA_VERSION")
+    implementation("com.github.Mopinion-com.native-android-sdk:mopinion-sdk:4.x.x")
 }
 ```
 For the WebView SDK:
 ```kotlin
 dependencies {
-    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:BETA_VERSION")
+    implementation("com.github.Mopinion-com.native-android-sdk:webview-sdk:4.x.x")
 }
 ```
 Minimum supported Android API: 21
